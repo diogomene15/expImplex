@@ -1,7 +1,7 @@
 import sys
 import experimentosUtil
 from argumentosUtil import Args
-sys.setrecursionlimit(1000000000)
+sys.setrecursionlimit(1000000000) # para evitar o erro de recursão no quicksort com vetores grandes ordenados
 
 inc = 0
 fim = 0
