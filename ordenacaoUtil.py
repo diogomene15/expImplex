@@ -70,20 +70,18 @@ def _partition(lista, inicio, fim):
     i = inicio - 1
     temp = 0
     j = inicio
-    while j <= fim:
+    while j < fim:
         if lista[j] <= x:
             i += 1
             temp = lista[i]
             lista[i] = lista[j]
             lista[j] = temp
-
-        else:
-            temp = lista[i + 1]
-            lista[i+1] = lista[fim]
-            lista[fim] = temp
-
         j += 1
-    return i
+    temp = lista[i + 1]
+    lista[i + 1] = lista[fim]
+    lista[fim] = temp
+    return i + 1
+
 
 def quickSort(lista, inicio, fim):
     if inicio >= fim:
@@ -117,22 +115,29 @@ def heapSort(lista):
         lista[i], lista[0] = lista[0], lista[i]
         _heapify(lista, i, 0)
 
-def countingSort(lista):
-    maior = max(lista)
-    saida = [0] * len(lista)
+def countingSort(lista, maior):
+    tamanho = len(lista)
+    saida = [0] * tamanho
     contador = [0] * (maior + 1)
 
-    for i in range(0, len(lista)):
-        contador[lista[i]] += 1
+    for num in lista:
+        contador[num] += 1
 
     for i in range(1, maior + 1):
         contador[i] += contador[i - 1]
 
-    i = len(lista) - 1
-    while i >= 0:
-        saida[contador[lista[i]] - 1] = lista[i]
-        contador[lista[i]] -= 1
-        i -= 1
+    for num in reversed(lista):
+        saida[contador[num] - 1] = num
+        contador[num] -= 1
 
-    for i in range(0, len(lista)):
-        lista[i] = saida[i]
+    lista[:] = saida
+
+
+ordenadores = {
+    "selectionSort": selectionSort,
+    "insertionSort": insertionSort,
+    "mergeSort": mergeSort,
+    "quickSort": quickSort,
+    "heapSort": heapSort,
+    "countingSort": countingSort
+}
