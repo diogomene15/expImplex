@@ -33,12 +33,14 @@ def iniciar(inc,fim,stp,rpt):
             for nomeOrd, metodoOrd in ordenadores.items():
                 resultadoVetor = [tam]
                 vetorAleatorio = geraVetorAleatorio(tam)
+                params = []
                 if(nomeOrd == "mergeSort" or nomeOrd == "quickSort"):
-                    resultadoVetor.append(medirTempo(metodoOrd, vetorAleatorio, 0, len(vetorAleatorio)-1))
+                    params = [metodoOrd, vetorAleatorio, 0, len(vetorAleatorio)-1]
                 elif(nomeOrd == "countingSort"):
-                    resultadoVetor.append(medirTempo(metodoOrd, vetorAleatorio, max(vetorAleatorio)))
+                    params = [metodoOrd, vetorAleatorio, max(vetorAleatorio)]
                 else:
-                    resultadoVetor.append(medirTempo(metodoOrd, vetorAleatorio))
+                    params = [metodoOrd, vetorAleatorio]
+                resultadoVetor.append(medirTempo(*params))
                 resultadoVetor.append(nomeOrd)
                 print(resultadoVetor)
 
