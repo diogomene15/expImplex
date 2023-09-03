@@ -1,7 +1,7 @@
 set terminal pngcairo enhanced font 'Verdana,11' size 800, 600
 set output 'comparacaoDecrescente.png'
 
-set title 'Algoritmos de Ordenacao - Vetor aleatório'
+set title 'Algoritmos de Ordenacao - Vetor decrescente'
 set xlabel 'n'
 set ylabel 'Tempo (segundos)'
 
