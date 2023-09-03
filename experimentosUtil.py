@@ -42,10 +42,10 @@ def geraVetores(tam):
   vetorQuaseOrdenado = vetorOrdemCresc[:]
   desordenaVetor(vetorQuaseOrdenado)
   return {
-    "aleatorio": vetorAleatorio,
-    "crescente": vetorOrdemCresc,
-    "reverso": vetorReverso,
-    "quaseOrdenado": vetorQuaseOrdenado
+    "RANDOM": vetorAleatorio,
+    "SORTED": vetorOrdemCresc,
+    "REVERSE": vetorReverso,
+    "NEARLY SORTED": vetorQuaseOrdenado
   }
 
 
@@ -56,12 +56,10 @@ def media(vetor):
 def imprimirResultados(resultados):
   for tipoVetor, valoresTipoVetor in resultados.items():
     print(f"[ [{tipoVetor}] ]")
-    print("n\t\tSelection\tInsertion\tMerge\t\tHeap\t\tQuick\t\tCounting")
-    print(
-      "---------------------------------------------------------------------------"
-    )
+    print("n\tSelection\tInsertion\tMerge\t\tHeap\t\tQuick\t\tCounting")
+    print("-" * 96)
     for tam, valoresTam in valoresTipoVetor.items():
-      print(f"{tam}\t\t", end="")
+      print(f"{tam}\t", end="")
       for nomeOrd, valOrd in valoresTam.items():
         print("{0:.6f}\t".format(valOrd), end="")
       print()
@@ -76,10 +74,10 @@ def iniciar(inc, fim, stp, rpt):
     for nomeOrd in ordenadores:
       modeloResultado[tam][nomeOrd] = []
   resultados = {
-    "aleatorio": copy.deepcopy(modeloResultado),
-    "crescente": copy.deepcopy(modeloResultado),
-    "reverso": copy.deepcopy(modeloResultado),
-    "quaseOrdenado": copy.deepcopy(modeloResultado)
+    "RANDOM": copy.deepcopy(modeloResultado),
+    "SORTED": copy.deepcopy(modeloResultado),
+    "REVERSE": copy.deepcopy(modeloResultado),
+    "NEARLY SORTED": copy.deepcopy(modeloResultado)
   }
 
   for tam in tamanhosVetores:
