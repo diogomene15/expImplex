@@ -98,26 +98,29 @@ def _heapify(lista, n, i):
   esquerda = 2 * i + 1
   direita = 2 * i + 2
 
-  if esquerda < n and lista[i] < lista[esquerda]:
-    maior = esquerda
+  if esquerda < n and lista[esquerda] > lista[maior]:
+      maior = esquerda
 
-  if direita < n and lista[maior] < lista[direita]:
-    maior = direita
+  if direita < n and lista[direita] > lista[maior]:
+      maior = direita
 
   if maior != i:
-    lista[i], lista[maior] = lista[maior], lista[i]
-    _heapify(lista, n, maior)
-
+      temp = lista[i]
+      lista[i] = lista[maior]
+      lista[maior] = temp
+      i = maior
+  else:
+      return
 
 def heapSort(lista):
   n = len(lista)
-
-  for i in range(n, -1, -1):
-    _heapify(lista, n, i)
-
+  for i in range(n // 2 - 1, -1, -1):
+      _heapify(lista, n, i)
   for i in range(n - 1, 0, -1):
-    lista[i], lista[0] = lista[0], lista[i]
-    _heapify(lista, i, 0)
+      temp = lista[i]
+      lista[i] = lista[0]
+      lista[0] = temp
+      _heapify(lista, i, 0)
 
 
 def countingSort(lista, maior):
