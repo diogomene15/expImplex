@@ -1,13 +1,10 @@
-# Set the terminal type and output file
 set terminal pngcairo enhanced font 'Verdana,11' size 800, 600
 set output 'comparacaoAleatorioMenores.png'
 
-# Set the plot title and labels
 set title 'Algoritmos de Ordenacao - Vetor aleatório'
 set xlabel 'n'
 set ylabel 'Tempo (segundos)'
 
-# Define the data columns
 n = 1
 Selection = 2
 Insertion = 3
@@ -18,7 +15,7 @@ Counting = 7
 
 set grid
 set key left top
-# Plot the data using lines
+
 plot 'comparacaoAleatorio.dat' using n:Merge with linespoints  lw 2 title 'Merge', \
      'comparacaoAleatorio.dat' using n:Heap with linespoints  lw 2 title 'Heap', \
      'comparacaoAleatorio.dat' using n:Quick with linespoints  lw 2 title 'Quick', \

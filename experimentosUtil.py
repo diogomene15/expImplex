@@ -84,6 +84,8 @@ def iniciar(inc, fim, stp, rpt):
     for _ in range(rpt):
       vetoresTeste = geraVetores(tam)
       for nomeTipoVetor, vetor in vetoresTeste.items():
+        if( (nomeTipoVetor == "SORTED" or nomeTipoVetor == "REVERSE") and _ > 0):
+          continue
         for nomeOrd, metodoOrd in ordenadores.items():
           params = []
           if (nomeOrd == "mergeSort" or nomeOrd == "quickSort"):
@@ -93,6 +95,9 @@ def iniciar(inc, fim, stp, rpt):
           else:
             params = [metodoOrd, vetor]
           resultados[nomeTipoVetor][tam][nomeOrd].append(medirTempo(*params))
+
+  # Depois da execução de todo o conjunto de experimentos
+  # realiza-se a média dos tempos de cada repetição.
   for tipoVetor in resultados:
     for tam in tamanhosVetores:
       for nomeOrd in ordenadores:
