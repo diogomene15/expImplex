@@ -17,6 +17,6 @@ set grid
 set key left top
 
 plot 'comparacaoAleatorio.dat' using n:Merge with linespoints  lw 2 title 'Merge', \
-     'comparacaoAleatorio.dat' using n:Heap with linespoints  lw 2 title 'Heap', \
      'comparacaoAleatorio.dat' using n:Quick with linespoints  lw 2 title 'Quick', \
-     'comparacaoAleatorio.dat' using n:Counting with linespoints  lw 2 title 'Counting'
+     'comparacaoAleatorio.dat' using n:Counting with linespoints  lw 2 title 'Counting', \
+     'comparacaoAleatorio.dat' using n:Heap with linespoints  lw 2 title 'Heap'

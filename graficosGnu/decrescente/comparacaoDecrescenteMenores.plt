@@ -17,5 +17,5 @@ set grid
 set key left top
 
 plot 'comparacaoDecrescente.dat' using n:Merge with linespoints  lw 2 title 'Merge', \
-     'comparacaoDecrescente.dat' using n:Heap with linespoints  lw 2 title 'Heap', \
-     'comparacaoDecrescente.dat' using n:Counting with linespoints  lw 2 title 'Counting'
+     'comparacaoDecrescente.dat' using n:Counting with linespoints  lw 2 title 'Counting', \
+     'comparacaoDecrescente.dat' using n:Heap with linespoints  lw 2 title 'Heap'

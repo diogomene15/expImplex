@@ -16,9 +16,9 @@ Counting = 7
 set grid
 set key left top
 
-plot 'comparacaoDecrescente.dat' using n:Selection with linespoints  lw 2 title 'Selection', \
-     'comparacaoDecrescente.dat' using n:Insertion with linespoints  lw 2 title 'Insertion', \
-     'comparacaoDecrescente.dat' using n:Merge with linespoints  lw 2 title 'Merge', \
-     'comparacaoDecrescente.dat' using n:Heap with linespoints  lw 2 title 'Heap', \
+plot 'comparacaoDecrescente.dat' using n:Insertion with linespoints  lw 2 title 'Insertion', \
      'comparacaoDecrescente.dat' using n:Quick with linespoints  lw 2 title 'Quick', \
-     'comparacaoDecrescente.dat' using n:Counting with linespoints  lw 2 title 'Counting'
+     'comparacaoDecrescente.dat' using n:Selection with linespoints  lw 2 title 'Selection', \
+     'comparacaoDecrescente.dat' using n:Merge with linespoints  lw 2 title 'Merge', \
+     'comparacaoDecrescente.dat' using n:Counting with linespoints  lw 2 title 'Counting', \
+     'comparacaoDecrescente.dat' using n:Heap with linespoints  lw 2 title 'Heap'
