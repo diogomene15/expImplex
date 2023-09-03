@@ -3,6 +3,7 @@ import time
 import copy
 from ordenacaoUtil import *
 
+
 def medirTempo(metodo, vetor, ini=None, fim=None):
   vetorCopia = vetor.copy()
   params = [vetorCopia, ini, fim]
