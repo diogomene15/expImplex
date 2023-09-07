@@ -1,3 +1,4 @@
+# Diogo de Lima Menezes e Marcos Vinicius Medeiros
 import random
 import time
 import copy
@@ -24,7 +25,10 @@ def geraVetorAleatorio(tam):
 
 def desordenaVetor(vetor, porcentagemDesordem=10):
   tamVetor = len(vetor)
-  numItemsDesordem = int(porcentagemDesordem / 100 * tamVetor)
+  # Resouveu-se por dividir a porcentagem de desordem por 2
+  # para que o número total de itens desordenados seja, de fato,
+  # mais próxima de dois por cento, em relação ao tamanho do vetor.
+  numItemsDesordem = int(porcentagemDesordem / 100 / 2 * tamVetor)
   indicesDesordenados = random.sample(range(tamVetor), numItemsDesordem)
   for indiceDes in indicesDesordenados:
     novoIndice = random.randint(0, tamVetor - 1)

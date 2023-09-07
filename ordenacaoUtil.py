@@ -1,3 +1,4 @@
+# Diogo de Lima Menezes e Marcos Vinicius Medeiros
 def selectionSort(lista):
   for i in range(len(lista) - 1, 0, -1):
     posicao = 0
@@ -93,24 +94,23 @@ def quickSort(lista, inicio, fim):
   quickSort(lista, a + 1, fim)
 
 
-def _heapify(lista, n, i):
-  maior = i
-  esquerda = 2 * i + 1
-  direita = 2 * i + 2
+def _heapify(lista, n, ini):
+  maior = ini
+  esq, dir = 2 * ini + 1, 2 * ini + 2
 
-  if esquerda < n and lista[esquerda] > lista[maior]:
-      maior = esquerda
+  if esq< n and lista[esq] > lista[maior]:
+      maior = esq
 
-  if direita < n and lista[direita] > lista[maior]:
-      maior = direita
+  if dir < n and lista[dir] > lista[maior]:
+      maior = dir
 
-  if maior != i:
-      temp = lista[i]
-      lista[i] = lista[maior]
+  if maior != ini:
+      temp = lista[ini]
+      lista[ini] = lista[maior]
       lista[maior] = temp
-      i = maior
+      ini = maior
   else:
-      return
+      return;
 
 def heapSort(lista):
   n = len(lista)

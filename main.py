@@ -1,3 +1,4 @@
+# Diogo de Lima Menezes e Marcos Vinicius Medeiros
 import sys
 import experimentosUtil
 from argumentosUtil import Args
